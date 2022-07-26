@@ -4,12 +4,16 @@
  */
 package com.porfolioArgProg.SpringBoot.Repository;
 
+import com.porfolioArgProg.SpringBoot.Model.Educacion;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.Repository.*;
 
 /**
  *
  * @author kavay
  */
-public class EducacionRepository {
-    
-}
+
+
+public interface EducacionRepository extends JpaRepository<Educacion, Long> {
+
+        }

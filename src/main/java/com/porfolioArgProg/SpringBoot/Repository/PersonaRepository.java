@@ -4,12 +4,16 @@
  */
 package com.porfolioArgProg.SpringBoot.Repository;
 
+import com.porfolioArgProg.SpringBoot.Model.Persona;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.Repository.*;
 
 /**
  *
  * @author kavay
  */
-public class PersonaRepository {
-    
+
+
+public interface PersonaRepository extends JpaRepository <Persona, Long>{
+
 }
