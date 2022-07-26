@@ -4,12 +4,27 @@
  */
 package com.porfolioArgProg.SpringBoot.Service;
 
-import org.hibernate.service.Service.*;
+import com.porfolioArgProg.SpringBoot.Model.Educacion;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  *
  * @author kavay
  */
+
+@Component
+
 public class EducacionService {
-    
+
+    public List<Educacion> getEducacion() {
+        return null;
+    }
+
+    public void addEducacion(Educacion educacion) {
+    }
+
+    public void editEducacion(Educacion educacion) {
+    }
 }
