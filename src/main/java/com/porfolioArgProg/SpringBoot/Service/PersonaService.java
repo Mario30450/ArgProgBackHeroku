@@ -1,30 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.porfolioArgProg.SpringBoot.Service;
 
 import com.porfolioArgProg.SpringBoot.Model.Persona;
-import org.hibernate.service.Service.*;
-import org.springframework.stereotype.Component;
+import com.porfolioArgProg.SpringBoot.Repository.PersonaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- *
- * @author kavay
- */
+@Service
+public class PersonaService{
+    @Autowired
+    private PersonaRepository personaRepository;
 
-@Component
-public class PersonaService {
-
-    public List<Persona> getPersona() {
-        return null;
+    public PersonaService() {
     }
 
-    public void addPersona(Persona persona) {
+    public void addPersona(Persona persona){
+        personaRepository.save(persona);
     }
 
-    public void editPersona(Persona persona) {
+    public void editPersona(Persona persona){
+        personaRepository.save(persona);
+    }
+
+    public List<Persona> getPersona(){
+        return (List<Persona>) personaRepository.findAll();
     }
 }
