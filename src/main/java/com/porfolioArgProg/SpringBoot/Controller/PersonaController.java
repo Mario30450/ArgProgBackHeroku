@@ -12,17 +12,17 @@ public class PersonaController {
     @Autowired
     private PersonaService personaService;
 
-    @GetMapping("/get/persona")
+    @GetMapping("/persona/traer")
     public List<Persona> getPersona(){
         return personaService.getPersona();
     }
-    @PostMapping("/post/persona")
+    @PostMapping("/persona/crear")
     public String addPersona(@RequestBody Persona persona){
         personaService.addPersona(persona);
         return "post";
     }
 
-    @PutMapping("/put/persona")
+    @PutMapping("/persona/borrar/{id}")
         public String editPersona(@RequestBody Persona persona){
             personaService.editPersona(persona);
             return "put";
