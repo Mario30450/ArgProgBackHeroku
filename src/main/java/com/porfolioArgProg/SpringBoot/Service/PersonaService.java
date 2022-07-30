@@ -19,8 +19,12 @@ public class PersonaService{
         personaRepository.save(persona);
     }
 
-    public void editPersona(Persona persona){
-        personaRepository.save(persona);
+    public void editPersona(Long id, Persona persona){
+        Persona antPersona = personaRepository.findById(id).orElse(null);
+        if (persona.getNombre() != null){
+            antPersona.setNombre(persona.getNombre());
+        }
+        personaRepository.save(antPersona);
     }
 
     public List<Persona> getPersona(){

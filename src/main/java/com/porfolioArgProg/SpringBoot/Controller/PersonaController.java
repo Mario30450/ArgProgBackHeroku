@@ -7,8 +7,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
+
+@CrossOrigin (origins = "http://localhost:4200")
 public class PersonaController {
+
+
     @Autowired
     private PersonaService personaService;
 
@@ -16,17 +21,17 @@ public class PersonaController {
     public List<Persona> getPersona(){
         return personaService.getPersona();
     }
-    @PostMapping("/persona/crear")
+    @PostMapping("/persona/agregar")
     public String addPersona(@RequestBody Persona persona){
         personaService.addPersona(persona);
-        return "post";
+        return "se agrego";
     }
 
-    @PutMapping("/persona/borrar/{id}")
-        public String editPersona(@RequestBody Persona persona){
-            personaService.editPersona(persona);
-            return "put";
-        }
+    @PostMapping("/persona/editar/{id}")
+    public String editPersona(@PathVariable Long id, @RequestBody Persona persona){
+        personaService.editPersona(id, persona);
+        return "se edito";
+    }
 
 
 }
